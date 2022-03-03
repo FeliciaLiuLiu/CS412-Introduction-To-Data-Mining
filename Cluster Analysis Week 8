@@ -1,0 +1,272 @@
+Class Quiz:
+1. If p is directly density-reachable from a point q, which of the following statements is correct?
+Ans: p is density-reachable from a point q;
+Exp: The chain contains only two points, p and q;
+
+
+2. Suppose C is the cluster (set of nodes) we find in the 3D space, for a given point χ ∈ C how many of the following statements about x might be correct?
+Ans:
+x.vacation < 3
+x.age < 40
+x.salary < 3
+x.salary > 4
+
+
+
+Quiz:
+1. In the DBSCAN algorithm, given Eps and Minpts, if a point p is directly density-reachable from a point q, 
+which of the following statements are correct? Select all that apply.
+True:
+(1) Point q is density-connected to p.
+Exp: Correct since both p and q are density-reachable from the point q
+
+(2) Point q may not be directly density-reachable from p.
+Exp: Correct since p may not be core point
+
+
+False:
+(1) Point q is density reachable from p.
+Exp: Incorrect since p may not be a core point
+
+(2) Point p may not be density reachable from q.
+Exp: Incorrect since p must be density-reachable from q and the chain contains only p and q
+
+
+2. In the DBSCAN algorithm, suppose eps = 4cm and Minpts = 5. Randomly select two points p, q from the observed data points. 
+We have dist(p, q) = 1cm. Which of the following statements are correct? Select all that apply.
+True:
+(1) Points p and q may not belong to any clusters.
+Exp: Correct if neither p nor q is a core point
+
+(2) Points p and q may be in different clusters. 
+Exp: Correct if (i) neither p nor q is a core point, 
+(ii) there exists a core point o1 such that o1 is only density-reachable to p but not density reachable to q, 
+and (iii) there exists a core point o2 such that o2 is only density-reachable to q but not density reachable to p
+
+False:
+(1) Points p and q must be in different clusters. 
+Exp: Incorrect since p and q might be noise/outliers and they do not belong to any clusters
+
+(2) Points p and q must be in the same cluster. 
+Exp: Incorrect since p and q might be noise/outliers and they do not belong to any clusters
+
+
+
+3. Given the following synthetic data set (left) and the reachability-plot (right), 
+how many clusters would there be if we set the threshold to be the red line in the right figure?
+Ans: 
+Exp: There are two valleys below the red line, which implies that there would be two clusters. 
+
+
+4. When applying the CLIQUE clustering algorithm to the following depicted datasets, 
+which of the following statements are correct? Select all that apply.
+True:
+(1) For any point x that 4 < x.vacation < 5, it does not belong to any dense regions in 3-D space.
+Exp: Any points that belong to sparse regions in 1-D  space will not belong to any dense regions in 3-D space. 
+Meanwhile, any points that belong to dense regions in 1-D space may not belong to any dense regions in 3-D space 
+since there may exist a dimension such that the point belongs to a sparse region. 
+
+(2) For any point x that 30 < x.age < 50, it may not belong to any dense regions in 3-D space.
+Exp: Any points that belong to sparse regions in 1-D  space will not belong to any dense regions in 3-D space. 
+Meanwhile, any points that belong to dense regions in 1-D space may not belong to any dense regions in 3-D space 
+since there may exist a dimension such that the point belongs to a sparse region. 
+
+(3) For any point x that 2 < x.salary < 4, it may not belong to any dense regions in 3-D space. 
+Exp: Any points that belong to sparse regions in 1-D  space will not belong to any dense regions in 3-D space. 
+Meanwhile, any points that belong to dense regions in 1-D space may not belong to any dense regions in 3-D space 
+since there may exist a dimension such that the point belongs to a sparse region. 
+
+
+False:
+(1) For any point x that 4 < x.salary < 5, it belongs to some dense regions in 3-D space.
+Exp: Any points that belong to sparse regions in 1-D  space will not belong to any dense regions in 3-D space. 
+Meanwhile, any points that belong to dense regions in 1-D space may not belong to any dense regions in 3-D space 
+since there may exist a dimension such that the point belongs to a sparse region. 
+
+
+5. Given the following synthetic data set (left) and, the reachability-plot (right), 
+how many clusters might there be by setting different reachability thresholds? 
+Ans: 
+Exp: 
+There might be 1, 2, or 3 clusters, which correspond to the red, green, and blue lines, respectively. 
+If we set Minpts = 1 and eps to an extremely small value, then every point may form a cluster, i.e., there may be more than 3 clusters. 
+
+
+6. Question 1
+In the DBSCAN algorithm, given Eps and Minpts, if a point p is density-connected to a point q, 
+which of the following statements are correct? Select all that apply.
+True: 
+(1) Point p may be density-reachable from q but not necessarily.
+Exp: Correct. As long as p is density-reachable from a certain point o, from which q is also density-reachable, they are density connected.  
+p could  but not necessarily q.
+
+(2) Point q is density-connected to p.
+Exp: Correct since there exists a point o such that both p and q are density-reachable from o.
+
+
+False:
+(1) Point p must be density-reachable from q.
+Exp: 
+Incorrect. It is possible that neither p nor q is a core-point. 
+
+(2) Point q is directly density-reachable from p.
+Exp:
+Incorrect. It is possible that neither p nor q is a core-point.
+
+
+
+7. In the DBSCAN algorithm, given Eps and Minpts, if a point p is density-reachable from a point q, 
+which of the following statements are correct? Select all that apply.
+True:
+(1) Point q is density-connected to p.
+Exp: Correct since both p and q are density-reachable from q
+
+(2) If there exists one point o density-reachable from p, then o is also density-reachable from q.
+Exp: Correct. Simply adding p into the chain will form a new chain from q to make o density-reachable.
+
+False:
+(1) Point q is also density-reachable from p.
+Exp: Incorrect when p is not a core point
+
+(2) Point p must be directly density-reachable from q.
+Exp: Incorrect when the chain of points include points other than p and q
+
+
+8. Considering the CLIQUE clustering algorithm, which of the following statements are correct? Select all that apply.
+True:
+(1) Any point that belongs to a cluster in a 1-D subspace A may not belong to any clusters (dense regions) in any 2-D subspaces that include A.
+Exp:
+Correct since the other dimension in a 2-D subspace may belong to sparse regions, i.e., does not belong to any clusters
+
+(2) Any point that does not belong to a cluster in a 1-D subspace A must not belong to any clusters (dense regions) in any 2-D subspaces that include A. 
+Exp: 
+Correct. For any data point, as long as there is one dimension that belongs to the sparse region, 
+the data point will not belong to any dense region in a higher dimension that includes A.
+
+
+False:
+(1) Any point that does not belong to a cluster in a 1-D subspace A may belong to some cluster (dense region) in any 2-D subspace that includes A. 
+Exp: Incorrect. For any data point, as long there is one dimension that belongs to the sparse region, 
+the data point will not belong to any dense region in a higher dimension that includes A.
+
+(2) Any point that belongs to a cluster in a 1-D subspace A must belong to some cluster (dense region) in any 2-D subspace that includes A.
+Exp: Incorrect since the other dimension in a 2-D subspace may belong to sparse regions, i.e., does not belong to any clusters.
+
+
+
+9. Apply the CLIQUE clustering algorithm to the following depicted dataset. Consider the following sets of points: 
+(1) D: the points from the dense region in the 3-D space; 
+(2) P: the points that get projected into the (purple) dense region of the Salary-Age 2-D subspace; 
+(3) B: the points that get projected into the (blue) dense region of the Salary-Vacation 2-D subspace.
+Which of the following statements are correct? Select all that apply.
+
+True:
+(1) B may or may not be a subset of P.
+Exp: Dense regions in lower-dimensional subspaces overlap, but may or may not have superset-subset relationships.
+
+(2) D must be a subset of P.
+Exp: For any point to be in a dense region in higher dimension space, it must be in a dense region in the lower dimensional space. 
+
+
+False:
+(1) D may or may not be a subset of P.
+Exp: For any point to be in a dense region in higher dimension space, it must be in a dense region in the lower dimensional space. 
+
+(2) B must be a subset of P.
+Exp: Dense regions in lower-dimensional subspaces overlap, but may or may not have superset-subset relationships.
+
+
+
+10. In the DBSCAN algorithm, given Eps and Minpts, if a point p is directly density-reachable from a point q, 
+which of the following statements are correct? Select all that apply.
+True:
+(1) Point q may not be directly density-reachable from p.
+Exp: Correct since p may not be core point
+
+(2) Point q is density-connected to p.
+Exp: Correct since both p and q are density-reachable from the point q
+
+
+False:
+(1) Point q is density reachable from p.
+
+(2) Point p may not be density reachable from q.
+Exp: Incorrect since p must be density-reachable from q and the chain contains only p and q
+
+
+
+11. In the DBSCAN algorithm, suppose eps = 1cm and Minpts = 5. Randomly select two points p, q from the observed data points. We have dist(p, q) = 4cm. 
+Which of the following statements are correct? Select all that apply.
+True:
+(1) Points p and q may not be in the same cluster.
+Exp: Correct if there exists a core point that both p and q are density-reachable from o, then p and q are density-connected and belong to the same cluster. 
+If there doesn’t exist such a core point, then p and q may be noise/outliers or belong to different clusters.
+
+(2) Points p and q may not belong to any clusters. 
+Exp: Correct since p and q may be noise/outliers such that they don’t belong to any cluster.
+
+False:
+(1) Points p and q must be in different clusters.
+Exp: Incorrect. p and q may be noise and do not belong to any clusters. 
+
+(2) Points p and q must be in the same cluster. 
+Exp: Incorrect. p and q may be noise and do not belong to any clusters. 
+
+
+
+12. Which of the following statements are true about probabilistic model based clustering?
+True:
+(1) It models the data from a generative process.
+(2) It assumes that the data are generated by a mixture of underlying probability distributions.
+(3) It attempts to fit the observed data with the model using a probabilistic approach
+
+False:
+(1) It assumes that data points (or objects) within a cluster are likely to belong to different distributions.
+Exp: It assumes that data points (or objects) within a cluster are likely to belong to same distribution.
+
+
+13. Which of the following assumptions are made by the Guassian mixture model
+True:
+(1) The probability density function of each data point is a Gaussian mixture model over all k cluster normals.
+(2) Each data point is generated independently.
+(3) Each cluster is characterized by a multivariate Gaussian distribution.
+
+False:
+(1) Data-points within a cluster are dependent on one another.
+Exp: Each data-point is generated independently. 
+
+
+13. Which of the following statements are true about EM algorithm
+True:
+(1) EM algorithm is sensitive to the starting parameters.
+
+False:
+(1) The M step of the EM algorithm minimizes the likelihood function = ln  P(D|\thetaθ) for an observed dataset D and model parameter \thetaθ.
+Exp: EM maximizes the likelihood. 
+
+(2) The likelihood function optimized by the EM algorithm is guaranteed to find the global optimal solution. 
+Exp: EM algorithm is not guaranteed to find the global optimal solution. It can get stuck in local optima depending on the starting parameters. 
+
+(3) EM algorithm also estimates the number of clusters in data.
+Exp: Number of clusters is input to the EM algorithm
+
+
+
+14. As shown in the figure bellow. C​onsider the following 1-dimensional dataset: x_1=0, x_2=0.09, x_3=0.18, x_4=0.9, x_5=1
+We apply the EM algorithm to train a GMM model for clustering. After the k-th iteration of the EM algorithm, 
+the means of the two Gaussian components are \mu_0=0.5, \mu_1=0.75μ 0​ =0.5,μ 1​ =0.75.
+Which of the following statements are true?
+
+True:
+(1) On the next M-step, \mu_0μ 0​will decrease, \mu_1μ 1​will increase.
+(2) The log-likelihood of the data will increase.
+
+False:
+(1) On the next M-step, \mu_0μ 0​  will not change, \mu_1μ 1​will increase.
+(2) The log-likelihood of the data will decrease.
+
+
+
+
+
+
