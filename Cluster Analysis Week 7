@@ -1,0 +1,156 @@
+Class Quiz:
+1. Is K-means guaranteed to find K clusters that leads to the global minimum of the SSE?
+Ans: No
+Exp: 
+K-means can only find the local minimum of SSE.
+
+
+2. Is it possible that the SSE strictly increases after we recompute new centers in the k-means algorithm? Why?
+Ans: 
+No, it is impossible. The new center of a cluster comes from the average of all data points in this cluster, which actually minimizes the SSE.
+Exp:
+No, it is impossible. The new center of a cluster comes from the average of all data points in this cluster, which actually minimizes the SSE. 
+
+
+3. For k-means, will different initializations always lead to different clustering results?
+Ans: No
+Exp: No. Some different initializations may generate the same clustering result.
+
+4. In the k-medoids algorithm, after computing the new center for each cluster, is the center always guaranteed to be one of the data points in that cluster? 
+Ans: Yes
+Exp: The medoid is chosen from the current data points in the cluster.
+
+
+5. In the k-median algorithm, after computing the new center for each cluster, is the center always guaranteed to be one of the data points in that cluster?
+Ans: No
+Exp: The medians are computed on a dimension basis; the new center may not be a real data point.   
+
+
+6. Which of the following statements, if any, is FALSE?
+False:
+In divisive clustering, it’s possible for two points that are assigned to different clusters to fall into the same cluster later on. 
+
+True:
+In agglomerative clustering, cluster sizes from one iteration to the next may never decrease.
+In agglomerative clustering, once two objects are grouped into the same cluster, they will never be separated into different clusters again.
+In divisive clustering, cluster sizes from one iteration to the next may never increase.
+
+Exp:
+Divisive algorithms will only search within each partition to refine clusters, 
+so it’s not possible for two points in different clusters to be merged into the same cluster later on.
+
+
+7. When will a leaf entry in the CF tree split?
+Ans: When the diameter of the entry is larger than a threshold.
+
+
+8. Which of the following statements about probabilistic hierarchical clustering is FALSE:
+Ans: 
+Two clusters are merged if their distance defined in the probabilistic setting is > 0.
+Exp:
+We only merge two clusters if their distance is < 0, which results in an increase in the clustering quality.
+
+
+Quiz:
+
+1. Considering the k-means algorithm, after the current iteration we have three centroids (0, 1), (2, 1), and (-1, 2). 
+Will points (2, 3) and (2, 0.5) be assigned to the same cluster in the next iteration?
+Ans: Yes
+Exp: They will be both assigned to (2, 1).
+
+
+2. Considering the k-means algorithm, if points (0, 3), (2, 1), and (-2, 2) are the only points that are assigned to the first cluster now, 
+what is the new centroid for this cluster?
+Ans: (0, 2)
+Exp: Calculate the average value for x and y separately. You will then find the answers are 0 and 2, and thus, the new centroid should be (0, 2).
+
+
+
+3. Considering the k- median algorithm, if points (-1, 3), (-3, 1), and (-2, -1) are the only points that are assigned to the first cluster now, 
+what is the new centroid for this cluster?
+Ans: (-2, 1)
+Exp: Calculate the median value for x and y separately. You will then find the answers are -2 and 1, and thus, the new centroid should be (-2, 1).
+
+
+4. Which of the following statements about the k-means algorithm are correct? Select all that apply.
+True:
+The k-means algorithm is sensitive to outliers.
+The centroids in the k-means algorithm does not have to be any observed data points.
+
+False:
+For different initializations, the k-means algorithm will definitely give the same clustering results.
+The k-means algorithm can directly handle non-numerical (categorical) data.
+
+Exp:
+K-means cannot handle non-numerical (categorical) data, while k-modes can. 
+Different initializations may generate rather different clustering results (some could be far from optimal).
+
+This is true based on the computation rules of k-means, 
+which will generate new centroids that do not have to  be any observed data points.
+
+
+5. Which of the following is NOT a hierarchical clustering algorithm?
+Ans: K-Means
+Exp: BIRCH, AGNES, and Agglomerative Clustering are hierarchical clustering algorithms. 
+
+
+6. Consider the three clusters A, B, and C shown in the figure below. Using Euclidean distance as the similarity measure, 
+which two clusters would be merged first in agglomerative clustering using the complete link (diameter)?
+Ans: B and C
+Exp:
+The farthest point in A to B is (3,8). The farthest point in A to C is (3,8). The farthest point in B to A is (9, 2). 
+The farthest point in B to C is (8, 5). Complete link (diameter) between clusters is defined as the similarity between the most dissimilar members.  
+We want to merge two clusters that produce the smallest diameter. S
+ince (5,1) and (8,5) have the smallest distance between them of all possible pairs, B and C should be merged first.
+
+
+7. Which of the following statements about BIRCH is TRUE? (Select all that apply)
+True:
+Clustering results of BIRCH are sensitive to the insertion order of data points.
+
+Exp:
+BIRCH is sensitive to the insertion order of data points.
+
+
+False:
+
+(1) Whenever BIRCH forms a new cluster by merging two sub-clusters, its clustering feature is computed by going over all the data points.
+Exp:
+False. The clustering features are addictive. Namely, after merging two sub-clusters to a large cluster, 
+its clustering feature is just the summation of the two original clustering features.BIRCH can only work with Euclidean distance as the similarity metric.
+
+(2) BIRCH requires a CF Tree as the input.
+Exp:
+False. It can work with any similarity metric.
+
+(3) BIRCH requires a CF Tree as the input.
+Exp:
+False. BIRCH incrementally adds new nodes to the CF Tree.
+
+
+
+8. Recall from Lecture 4.8 that the objective of learning generative models is to find the parameters that maximize the likelihood of the observed data. 
+Suppose we have a set of points D drawn from Gaussian distribution. 
+For D = {-4, -4, 14, 14}, which of the following set of parameters (μ, σ) produces the maximum L(N(μ, σ): D)?
+Ans: μ = 5, σ = 9
+Exp: 
+The maximum likelihood estimator for μ in a Gaussian distribution is the sample mean, and the maximum likelihood estimator for σ2 is the sample variance. 
+Something similar in spirit is done in the M-step of the k-means algorithm, 
+where the average of all points in a cluster becomes the new centroid in order to minimize the sum of distance.
+
+
+
+9. Which of the following is a hierarchical clustering algorithm?
+Ans: BIRCH
+Exp:
+Only BIRCH is a hierarchical clustering algorithm.
+
+
+10. Recall from Lecture 4.8 that the objective of learning generative models is to find the parameters that maximize the likelihood of the observed data. 
+Suppose we have a set of points D drawn from Gaussian distribution. For D = {-1, -1, 1, 1}, 
+which of the following set of parameters (μ, σ) produces the maximum L(N(μ, σ): D)?   
+Ans: μ = 0, σ = 1
+Exp:
+The maximum likelihood estimator for μ in a Gaussian distribution is the sample mean, and the maximum likelihood estimator for σ2 is the sample variance. 
+Something similar in spirit is done in the M-step of the k-means algorithm, 
+where the average of all points in a cluster becomes the new centroid in order to minimize the sum of distance.
