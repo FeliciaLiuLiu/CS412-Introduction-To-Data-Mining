@@ -1,0 +1,195 @@
+Quiz:
+1. The above graph contains training examples in a 2 dimensional space, 
+where black squares are negative training examples and red triangles are positive training examples. 
+All lines are parallel to each other. Which following training examples are support vectors? Select all that apply.
+Ans:
+a. P5
+b. N1
+
+False:
+a. P4
+b. N2
+
+
+
+2. Which of the following statements about SVM is correct?
+Ans:
+a. SVM can perform a non-linear classification using kernel functions.
+
+
+False:
+a. SVM is a classification method only for linear data.
+b. SVM is a generative classifier.
+c. SVM is an unsupervised learning algorithm.
+
+
+3. The above graph contains training examples in a 2 dimensional space, 
+where black squares are negative training examples and red triangles are positive training examples. 
+All lines are parallel to each other. Which following training examples are support vectors? Select all that apply.
+Ans:
+a. P1
+b. N3
+
+False:
+a. P2
+b. N4
+
+
+4. What is a strength of SVM?
+Ans:
+a. SVMs can efficiently perform a non-linear classification using kernel functions.
+b. The prediction accuracy of SVM is generally high.
+
+False:
+a. SVM for low dimensional data can have good generalization, even when the number of support vectors is large.
+b. SVM is scalable to the number of data objects in terms of memory usage.
+c. The training time a SVM classifier is short.
+
+
+5. Which of the following is a generative classifier model?
+Ans:
+a. Bayesian Network
+
+False:
+a. Logistic Regression
+b. SVM
+c. Perceptron
+
+
+
+6. Which of the following model(s) can be used to handle the sequence dataset (e.g. text)?
+Ans:
+a. All of the above
+Exp: 
+RNNs and Transformers were designed for sequential datasets such as time series and text.
+One-dimensional convolution (CNNs) models can be used for text datasets. 
+
+
+False:
+a. Recurrent neural networks (RNN)
+b. Convolution neural networks (CNN)
+c. Transformers
+
+
+
+7. 
+Consider a fully-connected neural network N with two layers as shown below, 
+
+y = \sigma ( W_2  \sigma( W_1 x))y=σ(W 
+2
+​
+ σ(W 
+1
+​
+ x))
+
+where the dimensions \sigmaσ is the sigmoid function and W_1W 
+1
+​
+  & W_2W 
+2
+​
+  are weight matrices of dimensions 2\times22×2 & 2\times22×2 respectively. 
+
+Now, consider two extensions of N: N1 and N2. 
+
+N1 is obtained by increasing the width of the neural network three-fold, i.e., 
+
+y = \sigma ( W_4  \sigma( W_3 x))y=σ(W 
+4
+​
+ σ(W 
+3
+​
+ x))
+
+where W_3W 
+3
+​
+  & W_4W 
+4
+​
+  are weight matrices of dimensions 2\times62×6 & 6\times26×2 respectively. 
+
+N2 is obtained by increasing the depth of the neural network three-fold, i.e., 
+
+y = \sigma ( W_8 \sigma ( W_7 \sigma ( W_6  \sigma( W_5 x))y=σ(W 
+8
+​
+ σ(W 
+7
+​
+ σ(W 
+6
+​
+ σ(W 
+5
+​
+ x))
+
+where W_5, W_6, W_7, W_8W 
+5
+​
+ ,W 
+6
+​
+ ,W 
+7
+​
+ ,W 
+8
+​
+  are weight matrices of dimensions 2\times22×2. 
+
+Which of the models N1 or N2 will take longer to train by backpropagation?
+
+Ans: 
+a. N2 will take longer to train.
+Exp: In general, models with greater depth take longer to train by back-propagation 
+due to the slow backpropagation of gradients through the layers. 
+
+False:
+a. N1 will take longer to train.
+b. N1 and N2 will take same time to train.
+c. Can't say
+
+
+
+8. Which following statement is true regarding recurrent neural networks (RNN) ?
+Ans:
+a. Vanishing and exploding gradients is a major obstacle of RNN.
+
+False:
+a. Output at each timestamp is based on both the current input and the inputs at all future timestamps.
+b. Transformer is a variant of RNN that handles sequential inputs with "recurrence"
+c. LSTM is a variant of RNN to address the overfitting issue.
+
+
+
+9. Which of the following gives non-linearity to a neural network?
+Ans:
+a. Sigmoid Neuron
+
+False:
+a. Stochastic Gradient Descent
+b. All of the above
+c. Convolution function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
