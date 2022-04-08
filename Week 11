@@ -1,0 +1,175 @@
+Class Quiz:
+1. 
+If our dataset has k attributes in total, to determine the best splitting attribute, 
+we need to scan the database k times and construct AVC-sets for each attribute respectively.
+Ans: False
+Exp:
+We only need to scan the database once to construct all the AVC sets (the AVC group).
+
+
+2. Using the chain rule for Bayesian networks, 
+which of the following equations hold for the 'Lung Cancer' network? (Use the first letter of the node name to denote the variable)
+Ans:
+a. p(X,L,F,S) = p(F)* p(S) *p(L|F,S) *p(X|L)
+b. p(L,F,S) = p(F) * p(S) *p(L|F,S) 
+c. p(E,S) = p(S) * p(E|S) 
+d. p(D, E, L, F, S) = p(F) * p(L|F,S)* p(E,S)*  p(D|L,E) 
+
+
+
+Quiz:
+1. Using the data from question 1, what is the best attribute to split upon under the selection measure information gain?
+Ans: Age
+
+2. 
+Which of the following statements are correct about decision trees? 
+True:
+a. We can alleviate the overfitting problem by setting a threshold for the minimum number of data points assigned to each node. 
+b. For the same set of data and a particular split measure, we will always end up with the same decision tree.
+c. 
+If the response variable (the label) is completely dependent on the features (the attributes), 
+the training accuracy of a decision tree before pruning is 100%.
+
+3. Which of the following statements are correct about decision trees and entropy?
+True:
+a. The conditional entropy H(Y|X) is always less or equal than H(Y). 
+b. During the prediction stage, when we get to the leaf node of the decision tree, we choose the label of the majority.
+c. Decision trees are usually constructed top-down.
+
+
+4. 
+Which of the following split criteria can be used along with the RainForest algorithm?
+Ans:
+a. Gini index
+b. Gain ratio
+c. Information gain
+d. Chi-square (as in the CHAID algorithm)
+
+
+5. Which of the following statements are correct about decision trees? 
+Please select all that apply.
+Ans:
+a. We can alleviate the overfitting problem by removing branches from a fully grown decision tree.
+b. In interactive visual mining, the attribute to split upon is not determined by a selection measure but manually selected by the user.
+
+False:
+a. The information gain selection measure tends to select attributes that have many possible values. 
+Gain ratio overcomes this bias by normalization so we should always use gain ratio instead of information gain.
+
+b. If the training accuracy of a decision tree is 100%, it is overfitting the data.
+
+
+6. Which of the following statements are correct regarding naive Bayes classifiers?
+Ans:
+a. The naive Bayes classifier can be used for classifying data streams since the parameters of the naive Bayes classifier can be updated incrementally.
+b. The naive Bayes classifier can handle both categorical and continuous attributes (features).
+
+False:
+a. Laplacian correction can be used to improve the classification accuracy on the training set.
+b. We cannot use the naive Bayes classifier when there are dependencies among features.
+
+
+7. Which of the following statements are correct? 
+Select all that apply.
+Ans:
+a. Bayesian networks can reduce the number of parameters needed to represent a complete joint probability.
+b. Bayesian networks can be constructed manually, or by learning from data.
+
+False:
+a. The conditional independencies between variables in Bayesian networks do not change 
+when new variables are observed (and thus become part of the condition).
+b. All bayesian networks can be represented by the plate notation.
+
+
+
+8. What is the correct joint probability for the bayesian network represented by the following graph?
+Ans:
+P(A,B,C,D,E,F) = P(F|C,D,E)P(C|A,E)P(D|B)P(E|B)P(B|A)P(A)
+
+
+9. Which of the following statements are correct regarding naive Bayes classifiers? 
+Please select all that apply.
+Ans:
+a. There might be attribute-value-class combinations that are unseen in the training data but appear in the test data. 
+Laplacian correction can be applied to get a better estimate of the conditional probability.
+b. When building the naive Bayes classifier, we only need to scan the data once.
+c. By assuming that the attributes are conditionally independent, 
+the naive Bayes classifier greatly reduces the number of parameters compared to directly applying the Bayes theorem.
+
+False:
+a. The naive Bayes classifier can be used as an optimal decision boundary.
+
+
+
+10. Which of the following dependencies/independencies are true in this Bayesian network? Variable E is observed. 
+In the options, when we refer to conditional independencies, we condition on observed variables.
+Ans:
+a. B is not conditionally independent of C.
+Exp:
+B,C have a common parent A, so the influence flows through A.
+
+b. A is not conditionally independent of D.
+Exp: A->B->D has a cascade structure. 
+
+False:
+a. C is conditionally independent of D.
+Exp: E is observed, so influence can flow through the V-structure.
+
+b. F is conditionally independent of A.
+Exp: The influence of A can go through B,D,E,C to F.
+
+
+
+11. Which of the following statements are correct? 
+Select all that apply.
+
+Ans:
+a. Bayesian networks can reduce the number of parameters needed to represent a complete joint probability.
+b. Bayesian networks can be constructed manually, or by learning from data.
+
+False:
+a. The conditional independencies between variables in Bayesian networks do not change 
+when new variables are observed (and thus become part of the condition).
+b. All bayesian networks can be represented by the plate notation.
+
+
+
+12. Which of the following statements are correct? 
+Select all that apply.
+Ans:
+a. Naïve Bayes classifiers assume that the value of a particular feature is independent of the value of any other feature, 
+given the class variable.
+
+b. Bayesian networks allow class conditional independencies between subsets of variables.
+
+
+False:
+a. Bayesian network may also be represented by a directed cyclic graph under certain conditions.
+Exp: A bayesian network is always represented by DAG.
+b. The directed edges in Bayesian networks represent causality relations.
+
+
+13. Which of the following statements are correct? 
+Select all that apply.
+
+Ans: 
+a. A bayesian network is represented by a set of random variables and their conditional dependencies via a directed acyclic graph.
+b. A bayesian network represents the joint probability of variables in a factorized way as defined by the graph.
+
+False:
+a. A bayesian network may also be represented by a directed cyclic graph under certain conditions.
+Exp:A bayesian network is always represented by DAG.
+
+b. Bayesian networks assume that the value of a particular feature is independent of the value of any other feature, given the class variable.
+Exp: This assumption is for Naïve Bayes classifiers. Bayesian networks allow class conditional independencies between subsets of variables.
+
+
+
+14. Suppose our data has 3 different classes and 10 attributes, each with 2 possible values. 
+How many parameters will our model have if we use a naive Bayes classifier?
+Ans: 63
+Exp:
+To describe a naive Bayes model, we need all the probability values in the form of p(Xi=x|Y=y) for all possible y, i and x. 
+We also need the probability of p(Y=y).
+So the number of parameters is 3*2*10 +3 =63.
+
