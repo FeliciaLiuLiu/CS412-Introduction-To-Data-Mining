@@ -1,0 +1,111 @@
+Quiz:
+1. 
+Suppose we have learned 3 ranked rules as followings. (The default is Type 2.)
+{“ipad”, “iphone”} -> Type 1
+{“kindle”, “iphone”} -> Type 2
+{“ipad”} -> Type 1
+For the people who have {“ipad”, “kindle”, “iphone”}, which type will they be classified as by the CBA algorithm?
+
+Ans:
+Type 1
+
+False:
+Type 2
+
+
+2. Suppose we have learned 2 rules as follows:
+R1:  {“ipad”, “iphone”} -> Type 1.  ( Sup(R1) = 200,  Conf(R1) = 90% )
+R2:  {“ipad”, “iphone”, “ipod”} -> Type 1.   ( Sup(R2) = 200,  Conf(R2) = 90% )
+Which rule will be pruned by the CMAR algorithm?
+
+Ans:
+a. R2
+
+False:
+a. R1
+b. Neither
+
+
+
+3. Which of the following reasons is NOT an advantage of pattern-based classification methods 
+compared to other classification methods such as decision tree?
+Ans:
+a. No need of training data  
+
+False:
+a. Capable of handling complex data, e.g., graphs, sequences, etc.
+b. Compact representation of learned model
+c. Generating higher-order features
+
+
+4. Suppose we have the following data for classification using K-nearest neighbors.
+The yellow points belong to the positive class and the purple points belong to the negative class.
+Ans:
+Positive 
+
+False:
+Negative
+
+
+
+
+5. Which of the following sayings are correct about the nearest neighbor classifier?
+Select all that apply.
+Ans:
+a. The nearest neighbor classifier can be used for both classification and regression tasks.
+b. Increasing the parameter k makes the k-nearest neighbor classifier more robust to outliers and noise.
+
+False:
+a. The classification accuracy improves when the parameter k gets larger.
+b. The nearest neighbor classifier is slow in both training and prediction.
+
+
+
+6. Suppose we have learned 3 ranked rules as followings. (The default is Type 2.)
+{“ipad”, “iphone”} -> Type 1
+{“kindle”, “iphone”} -> Type 2
+{“ipad”} -> Type 1
+For the people who have {“kindle”, “iphone”}, which type will they be classified as by the CBA algorithm?
+Ans:
+Type 2
+
+False:
+Type 1
+
+
+
+
+7. Suppose we have the following data for classification using K-nearest neighbors.
+The yellow points belong to the positive class and the purple points belong to the negative class.
+Given a new data point at (-1.5,0), what will it be classified into when k=5?
+Ans:
+Negative 
+
+False:
+Positive 
+
+
+
+8. Using the data from Question 4, which label will the new point be assigned if we use distance-weighted nearest neighbor algorithm with k=5?
+Ans: 
+Positive 
+
+False:
+Negative
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
