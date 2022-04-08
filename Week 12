@@ -1,0 +1,243 @@
+Class Quiz:
+1. Which of the following statements are correct? 
+Select all that apply.
+
+Ans:
+a. The confusion matrix can also be used in multi-class classification. 
+b. The range of the F-measure is [0,1]. (When either precision or recall is 0, we define F-measure to be 0.)
+c. The recall will always be the same value as the sensitivity.
+
+False:
+a. For each problem, we can always find the best metric to compare different classification models.
+
+
+Quiz:
+1. When we evaluate the spam classifier from Question 1, which of the following metrics are suitable for use and can be derived from the confusion matrix?
+Please select all that apply.
+Ans:
+a. Specificity
+b. Precision of the negative label
+
+False:
+a. Error rate
+b. ROC curve
+
+
+2. Which of the following methods are suitable for datasets with imbalanced classes 
+when the minority class is not very rare (for example accounts for 10% of the data)? 
+Ans:
+a. Oversampling from the minority class
+b. Undersampling from the majority class.
+c. Moving the classification threshold towards the minority class.
+d. Stratified cross-validation.
+
+
+3. Which of the following statements about the ROC curve are correct? 
+Please select all that apply.
+
+Ans:
+a. Different points on the ROC curve are obtained by changing the decision threshold or cutoff. 
+b. The ROC curve shows the tradeoff between sensitivity and specificity. 
+Exp: The false positive rate is actually 1- specificity.
+c. The closer the curve is to the top left corner, the more accurate the classifier is.
+
+False:
+a. A single ROC curve can be used to represent the results of multi-class classifier.
+Exp:
+A single ROC curve can only be used for to show binary classification results. For k-class classification, 
+we need k different ROC curves to describe all results with each showing a "one VS all" classification result.
+
+
+
+4. Which of the following statements about ensemble methods are correct? 
+Please select all that apply.
+Ans:
+a. We can ensemble different types of classification models(such as decision trees, naive bayes and SVMs together)  to improve accuracy.
+b. If the data is noisy, boosting models may overfit to the noise and not generalize well.
+Exp:
+The boosting algorithm will assign a large weight to the noisy tuples that are misclassified.
+
+
+False:
+a. Ensemble models must be trained iteratively.
+Exp:
+Boosting models must be trained iteratively as it uses the error rate from the last round as feedback to reweight the examples. 
+Bagging models can be trained in parallel.
+
+b. Random forest classifiers perform worse than decision trees since they may not split at the best attribute at each node.
+Exp: Locally, the trees in random forest may not split at the best attribute, but by introducing diversity among the trees, 
+the ensembled classifier usually achieves better accuracy.
+
+
+
+5. When we evaluate the spam classifier from Question 1, which of the following metrics are suitable and can be derived from the confusion matrix?
+Please select all that apply.
+Ans:
+a. Recall of the negative label
+b. Specificity
+
+False:
+a. Sensitivity
+b. Accuracy
+
+
+6. Which of the following evaluation methods are suitable for large datasets?
+Please select all that apply.
+Ans:
+a. 10 fold cross-validation
+b. Holdout evaluation
+
+False:
+a. .632 bootstrap
+b. Leave-one-out cross-validation
+
+
+
+7. Which of the following statements about the ROC curve are correct? 
+Please select all that apply.
+Ans:
+a. The large the area under the ROC curve is, the more accurate the classifier is. 
+b. The diagonal represents a random classifier that determines the labels of the examples by flipping a coin. 
+c. The ROC curve displays the tradeoff between the true positive rate and the false positive rate.
+
+False:
+a. Different points on the ROC curve correspond to different test tuples.
+
+
+
+8. Which of the following statements about ensemble methods are correct? 
+Please select all that apply.
+
+Ans:
+a. Ensemble models can be applied to classification tasks as well as regression tasks.
+b. Ensemble models can help alleviate the class imbalance problem.
+c. Using bagging can generally make your model more robust to noise.
+
+False:
+a. We can only ensemble classifiers of the same type together. 
+
+
+
+9. Which of the following evaluation methods are suitable for small datasets? 
+Please select all that apply.
+Ans:
+a. .632 bootstrap 
+b. Leave-one-out cross-validation
+
+False:
+a. Holdout evaluation
+Exp: Holdout evaluation requires partitioning the dataset into training/ validation/ test sets. 
+When the dataset is small, the training set will be even smaller and the model may not be adequately trained.
+
+b. Stratified cross-validation
+
+
+10. When we evaluate the spam classifier from Question 1, which of the following metrics are suitable and can be derived from the confusion matrix?
+Please select all that apply.
+Ans:
+a. F measure of the negative label.
+b. Specificity
+
+False:
+a. Accuracy
+b. Sensitivity
+
+
+11. Suppose we are now trying to build a classifier but we only have a small amount of labeled data. 
+Which of the following actions can we take to improve our model? 
+Ans:
+a. Use both labeled data and unlabeled data to build a semi-supervised model.
+b. If human annotators are available, we can train a model using active learning to learn to query for more labels efficiently.
+Exp:
+Active learning assumes that the model can query an 'oracle' to get labels for the selected examples 
+and its overall goal is to build a good classifier using as few labeled data as possible.
+We can query for more labels if we have a human annotator available, as in the human-in-the-loop setting
+
+c. Use a model trained on a similar task and perform transfer learning on our labeled data.
+d. Use crowdsourcing to obtain more labels, even though the labels may be noisy.
+
+
+
+12. Consider the phrase mining problem we studied in pattern discovery. 
+Which of the following phrase mining algorithms belong to distantly supervised learning?
+Ans:
+Extract titles from Wikipedia and treat them as quality phrases. 
+Use these phrases to train a classifier to judge whether each candidate sequential pattern is a quality phrase or not.
+
+False:
+a. Find continuous sequential patterns with support >= 5. Output all these patterns as discovered phrases
+b. Ask humans to annotate some quality phrases. Use these phrases to train a classifier to judge 
+whether each candidate sequential pattern is a quality phrase or not.
+
+
+13. Which of the following statements are correct about active learning?
+Ans:
+a. We can have human annotators in active learning.
+b. When evaluating active learning algorithms, besides classification accuracy, 
+we need to consider the amount of labeled data that an algorithm uses.
+
+
+False:
+a. After each iteration, the size of the labeled training set becomes larger, but the size of the unlabeled pool does not change.
+b. We only have access to limited unlabeled data in active learning.
+
+
+14. Consider the problem of identifying cat images and bird images. Which of the following algorithms belong to zero-shot learning?
+Note: We are not asking whether the following algorithms are reasonable or not. 
+Instead, we are asking whether they are zero-shot learning algorithms or not.
+Ans:
+a. Suppose we already have a classifier for dogs, ducks, fish, planes. 
+We can train a classifier for each of the following attributes: four legs, two legs, one tail, has whiskers. 
+The output label (i.e., cat or bird) depends on these attributes.
+
+b. 
+Suppose we already have a classifier for dogs, ducks, fish, planes. 
+We directly feed each image to this classifier, if the predicted score of "dog" is higher than that of "ducks" then we regard it as a cat. 
+Otherwise, it is a bird.
+
+False:
+a. We ask humans to annotate a very small set of training samples (e.g., 5 for cats and 5 for birds). 
+Then, we train a classifier using both labeled and unlabeled samples.
+Exp:
+In zero-shot learning, we do not have any labeled instance for the target classes (i.e., cat and bird in this case).
+
+
+15. Consider the problem of text classification, where we assign a topic for each document from the set of {sports, politics, music, ...}. 
+Which of the following algorithms belong to zero-shot learning?
+Note: We are not asking whether the following algorithms are reasonable or not. 
+Instead, we are asking whether they are zero-shot learning algorithms or not.
+
+Ans:
+a. Find 20 related words of each topic name (e.g., for "sports" we may find "basketball", "Olympics", ...). 
+Compute the frequency of these words in each document.
+
+b. Regard the documents containing the name of a topic as positive labels for this topic. Train a classifier for each topic based on these documents. 
+Iteratively feed unlabeled documents to these classifiers, add the ones obtaining high confidence scores as positive labels, 
+and finetune the classifier based on the newly-labeled documents.
+
+False:
+a. We ask humans to annotate a very small set of training samples (e.g., 3 documents for each topic). 
+Then, we can calculate the similarity between each unlabeled document and the labeled ones based on word representations.
+Exp:
+In zero-shot learning, we do not have any labeled instance for the target classes.
+
+
+16. Suppose we are now trying to build a classifier but we only have a small amount of labeled data. 
+Which of the following actions can we take to improve our model?
+Ans:
+a. Use expected label distributions as weak supervision.
+b. Co-train two classifiers and use them to label the data for each other.
+c. Use existing resources such as knowledge bases to provide weak supervision.
+d. Use a model trained on a similar task and apply transfer learning.
+
+
+17. Which of the following statements are correct about transfer learning?
+Ans:
+a. There can be multiple source tasks.
+b. There can be multiple target tasks.
+
+False:
+a. No annotated training data is available for source tasks.
+b. No annotated training data is available for target tasks.
+Exp: It is still possible to obtain some annotated training data for target tasks, 
+but annotations may be insufficient to train the model so we need knowledge from source tasks.
